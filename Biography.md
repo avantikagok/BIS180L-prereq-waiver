@@ -1,9 +1,3 @@
----
-title: 'BIS180L Prereq: Biography'
-output: html_document
-date: "2024-03-27"
----
-
 Biography of Me! 
 ====================
 
