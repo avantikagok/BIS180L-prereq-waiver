@@ -1,0 +1,117 @@
+1) Basic Building Blocks
+  * assigning a value: assignment operator = <- 
+    * value = right side of arrow 
+    * variable name = left side of arrow
+    * ex) x <- 5 + 7
+  * vector: small collection of numbers
+    * creating vectors: c()
+    * ex) c(1, 2, 3)
+    * can combine vectors
+    * can do math operations with vectors
+    * ex) z * 2 + 100 multiplies each number in z by 2 and adds 100 to each
+  * help function
+    ex) ?c
+  * math functions
+    * sqrt()
+    * abs()
+  * math with 2 vectors
+    * When given two vectors of the same length, R simply performs the specified arithmetic operation (`+`, `-`, `*`, etc.) element-by-element. If the vectors are of different lengths, R 'recycles' the shorter vector until it is the same length as the longer vector.
+    
+3) Sequences of Numbers
+  * ex) `:` operator
+  * 1:20 = gives you every integer between and including 1 and 20 
+  * seq() function
+  * ex) seq(0. 10, by=0.5)
+  * ex) seq(along.with = my_seq)
+  * ex) rep(0, times = 40)
+  * ex) rep(c(0, 1, 2), times = 10)
+  * ex) rep(c(0, 1, 2), each = 10)
+
+4) Vectors
+  * logical vectors: TRUE, FALSE
+  * num_vect < 1 : tells you whether each component is less than 1 or not 
+  * logical operators: <, >=, >, <=, ==
+  * A | B: at least one of them is true
+  * A & B: both true 
+  * !A: opposite of A 
+  * character vectors: c("my", "name")
+    * pasting altogether: paste(my_char, collapse = " ")
+  * paste(1:3, c("X", "Y", "Z"), sep = "")
+    * "1X" "2Y" "3Z"
+  
+5) Missing Values
+  * NA: represent any value that is not available
+  * Draws from standard normal distribution: rnorm(1000)
+  * Sample: pick set of values at random from sample
+    * sample(c(y, z), 100)
+  * To figure out if values are NA or not:
+    * is.na(my_data)
+  * R represents TRUE as 1 and FALSE as 0
+    * summing a vector of TRUE and FALSE: tells you number of TRUEs
+  * NaN: Not a number
+  * Inf: infinity 
+  
+6) Subsetting Vectors
+  * grab a certain subset of values from total vector
+  * index vector types: logial, positive integers, negative integers, character strings
+  * ex) y[y > 0] : gives you positive values of y
+  * R uses 1 base indexing: first element of a vector is considered element 1
+  * x[-c(2, 10)]: get all values except indexes 2 and 10 
+  * naming elements: c(foo = 11, bar = 2, norf = NA)
+    * names(): gives you names of elements in a vector
+    * can use names to specify values of vector
+      * vect[c("foo", "bar")]
+      
+  7) Matrices and Data Frames
+    * matrices: single class of data
+    * data frames: many different classes of data
+    * dim(): tells you dimensions of an object or lets you assign dimension (dim(my_vector) <- c(4, 5))
+    * length(): tells you length
+    * attributes(): tells you dimensions
+    * 4 5: 4 rows, 5 columns
+    * class(): tells you what type of data structure 
+    * matrix(): makes a matrix
+    * identical(): checks whether 2 variables are identical and returns TRUE/FALSE
+    * cbind(): function to combine columns 
+    * data.frame(): takes any number of arguments and returns a single object of class `data.frame` that is composed of the original objects.
+    * colnames(): assign names to columns 
+      * ex) colnames(my_data) <- cnames
+      * row names : my_data <- data.frame(patients, my_matrix)
+
+8) Logic
+  * logical expressions will equate to TRUE or FALSE
+  * equality operator: ==
+  * !FALSE: TRUE
+  * AND: both things have to be true for it to be TRUE
+  * use & to evaluate AND across vector
+  * OR
+    * | to evaluate OR across vector 
+  
+9) Functions
+  * Sys.Date(): returns today's date 
+  * mean()
+  * boring_function <- function(x) {
+  x
+}
+  * remainder <- function(num = 7, divisor = 4) {
+  num %% divisor
+}
+  * can assign values based on variable name
+    * remainder(4, div = 2)
+
+12) Looking at Data
+  * ls(): lists variables
+  * dataset: 2 dimensions (rows and columns)
+  * dim(plants): 5166 10
+    * 5166 = rows
+    * 10 = columns
+  * nrow() and ncol(): tell you row and column number
+  * names(plants): tells you column names in character vector
+  * head(), tail(): let you see first rows and last rows 
+  * summary(): tells you summary of how data is distributed
+  * table(plants$Active_Growth_Period)
+  * str(plants): The beauty of str() is that it combines many of the features of the other functions you've already seen, all in a concise and readable format. At the very top, it tells us that the class of plants is 'data.frame' and that it has 5166 observations and 10 variables. It then gives us the name and class of each variable, as well as a preview of its contents.
+    
+  
+    
+  

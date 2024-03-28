@@ -1,0 +1,67 @@
+---
+title: "Swirl Practice"
+output: html_document
+date: "2024-03-28"
+---
+
+Exercise 1:
+```{r setup, include=TRUE}
+sum(2000:20,000)
+```
+Answer: 198011000
+
+
+Exercise 2: 
+```{r}
+a <- 5
+b <- 2:20
+a 
+b
+```
+In the code above, we assigned the object a to hold the value 5 and object b to hold a vector of numbers 2 to 20. When we called 'a', R outputs the number 5 and when we call 'b', it outputs the values 2 to 20. 
+
+Exercise 3"
+```{r}
+sum1 <- a + b
+sum2 <- sum(a, b)
+sum1
+sum2
+```
+You do get different results when you use '+' versus 'sum()'. When using '+', the value of a is added to each individual component in vector b. When using 'sum()', all of the components of vector b plus the value of a are added together to get the overall sum of all components. 
+
+Exercise 4:
+```{r}
+sum(b[5:10])
+```
+Sum: 51
+
+Exercise 5: 
+```{r}
+sum(b[c(3, 8, 10)])
+```
+Sum: 24
+
+Exercise 6:
+Example: m[5,5]
+1st number: rows
+2nd number: columns
+```{r}
+m <- matrix(data=1:25,ncol=5,byrow=T)
+m[3, ]
+```
+m[3, ]: gives you all the values in row 3
+```{r}
+m[, 3:5]
+```
+m[, 3:5]: extracts 3rd, 4th, and 5th column of m as one object
+
+Exercise 7:
+```{r}
+cbind(m,101:105)
+```
+cbind adds a new column to an existing data frame with the values passed into the cbind function. rbind does the same thing as cbind except adds the passed values to the data frame as a new row instead of a new column. 
+```{r}
+newrow <- matrix(data = 1001:1005, ncol=5, byrow = T)
+n <- rbind(newrow, m)
+n
+```
