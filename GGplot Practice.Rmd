@@ -1,0 +1,25 @@
+---
+title: "GGplot Practice"
+output: html_document
+date: "2024-03-29"
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+```
+```{r}
+data <- read_csv("/Users/davisavantika/Code/BIS180L-prereq-waiver/height_data_clean.csv")
+
+graph1data <- data %>%  group_by(survey_date, pop) %>%
+  summarize(avg_height = mean(height_cm)) %>%
+  ggplot(aes(x=survey_date, y=avg_height, color=pop)) + geom_point() + geom_line() + ggtitle("Average Height (cm) vs Time")
+graph1data
+
+ 
+
+
+graph2 <- data %>% group_by(pop) %>% filter(survey_date =="2023-01-27") %>%
+  ggplot(aes(x=pop, y=height_cm, color=pop)) + geom_boxplot() + ggtitle("2023-01-27: Population vs Height(cm)")
+graph2 
+
+```
