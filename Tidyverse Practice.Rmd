@@ -1,0 +1,17 @@
+---
+title: "Tidyverse Practice"
+output: html_document
+date: "2024-03-29"
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+```
+```{r}
+data <- read_csv("/Users/davisavantika/Code/BIS180L-prereq-waiver/height_data_clean.csv")
+refineddata <- data %>%
+  filter(survey_date =="2023-01-27") %>%
+  group_by(pop) %>%
+  summarize(avg_height = mean(height_cm))
+refineddata
+```
